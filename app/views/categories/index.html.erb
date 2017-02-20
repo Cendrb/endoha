@@ -1,0 +1,28 @@
+<h1>Categories</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Min books</th>
+    <th>
+      <div class="float_right_actions"><%= link_to mi.add.md_36, new_category_path %></div>
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category %></td>
+        <td><%= category.min_books %></td>
+        <td>
+          <div class="float_right_actions">
+            <%= link_to mi.edit, edit_category_path(category) %>
+            <%= link_to mi.delete, category, method: :delete, data: {confirm: "You sure about this?"} %>
+          </div>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
