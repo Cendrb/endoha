@@ -1,0 +1,1 @@
+json.partial! "class_members/class_member", class_member: @class_member

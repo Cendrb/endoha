@@ -1,0 +1,1 @@
+json.array! @class_members, partial: 'class_members/class_member', as: :class_member
