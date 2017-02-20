@@ -45,6 +45,15 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
+  config.generators do |g|
+    g.orm             :active_record
+    g.template_engine :erb
+    g.test_framework  :test_unit, fixture: false
+    g.stylesheets     false
+    g.javascripts     false
+  end
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

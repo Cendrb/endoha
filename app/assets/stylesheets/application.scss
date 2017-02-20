@@ -13,4 +13,10 @@
  *= require material_icons
  */
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "variables";
 @import "main";
+@import "generics";
+@import "material_design";
+@import "main_menu";
