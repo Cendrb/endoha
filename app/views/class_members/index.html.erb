@@ -2,27 +2,27 @@
 
 <table class="table table-striped">
   <thead>
-    <tr>
-                  <th>First name</th>
-                  <th>Last name</th>
-            <th>
-        <div class="float_right_actions"><%= link_to mi.add.md_36, new_class_member_path %></div>
-      </th>
-    </tr>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>
+      <div class="float_right_actions"><%= link_to mi.add.md_36, new_class_member_path %></div>
+    </th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @class_members.each do |class_member| %>
+  <% @class_members.each do |class_member| %>
       <tr>
-                                    <td><%= link_to 'class_member.first_name', class_member %></td>
-                                                <td><%= class_member.last_name %></td>
-                            <td>
+        <td><%= link_to class_member.first_name, class_member %></td>
+        <td><%= class_member.last_name %></td>
+        <td>
           <div class="float_right_actions">
             <%= link_to mi.edit, edit_class_member_path(class_member) %>
             <%= link_to mi.delete, class_member, method: :delete, data: {confirm: "You sure about this?"} %>
           </div>
         </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>

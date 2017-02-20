@@ -1,26 +1,26 @@
 <%= form_for(class_member) do |f| %>
-<% if class_member.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(class_member.errors.count, "error") %> prohibited this class_member
-    from being saved:</h2>
+    <% if class_member.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(class_member.errors.count, "error") %> prohibited this class_member
+            from being saved:</h2>
 
-  <ul>
-    <% class_member.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
+          <ul>
+            <% class_member.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
     <% end %>
-  </ul>
-</div>
-<% end %>
 
     <div class="form-group">
-                              <%= f.label :first_name %>
-              <%= f.text_field :first_name %>
-                    </div>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
     <div class="form-group">
-                              <%= f.label :last_name %>
-              <%= f.text_field :last_name %>
-                    </div>
-<div class="actions">
-  <%= f.submit %>
-</div>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
