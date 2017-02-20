@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'current_class_member/form'
-
-  get 'current_class_member/set'
-
+  get 'current_class_member' => 'current_class_member#form'
+  post 'current_class_member' => 'current_class_member#set'
   resources :books
   resources :categories
   root to: 'class_members#index'
