@@ -52,14 +52,14 @@ class EndohaCategory extends React.Component {
                     <div className="title">{name}</div>
                 </div>
                 <div className="book_list" style={{display: (showList ? 'block' : 'none')}}>
+                    <div className="total_selected_book_kinds">z této kategorie máme
+                        jako třída vybráno celkem {this.state.totalSelectedBookKinds} knih
+                    </div>
                     {books.map((book) => (
                         <EndohaBook
                             key={book.id}
                             onSelectedChanged={this.handleBookSelectedChange}
                             {...book} />))}
-                    <div className="total_selected_book_kinds">z této kategorie máme
-                        vybráno celkem {this.state.totalSelectedBookKinds} druhů knih
-                    </div>
                 </div>
             </div>
         );
