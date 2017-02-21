@@ -1,0 +1,49 @@
+.endoha_list {
+  .total_selected_book_kinds {
+    margin-top: 5px;
+  }
+}
+
+.endoha_category {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #cfcfcf;
+  .header {
+    .title {
+      font-size: 18px;
+    }
+    .selected_books_status {
+      float: right;
+      margin-top: 2px;
+    }
+    .enough {
+      color: #30872a;
+    }
+    .not_enough {
+      color: #a01017;
+    }
+  }
+  .book_list {
+    margin-top: 5px;
+    .total_selected_book_kinds {
+      margin-top: 4px;
+      font-size: 14px;
+    }
+  }
+}
+
+.endoha_book {
+  margin-top: 1px;
+  padding: 5px;
+  .title {
+    font-size: 14px;
+    padding: 0;
+  }
+  .subtitle {
+    font-size: 12px;
+    color: #5a5b5d;
+  }
+  .selected {
+    float: right;
+  }
+}

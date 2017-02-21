@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :require_class_member
+  before_action :require_class_member
 
   def require_class_member
     if !current_class_member

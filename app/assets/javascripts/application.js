@@ -18,4 +18,5 @@
 //= require react_ujs
 //= require components
 //= require bootstrap
+//= require react-rails-hot-loader
 //= require_tree .
