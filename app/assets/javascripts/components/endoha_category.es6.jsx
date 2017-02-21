@@ -26,8 +26,12 @@ class EndohaCategory extends React.Component {
         if (this.props.onTotalSelectedBookKindsChange) {
             this.props.onTotalSelectedBookKindsChange(this.state.totalSelectedBookKinds, totalSelectedBookKinds);
         }
+        let selectedBooksCount = this.state.selectedBooksCount + (isSelected ? 1 : -1);
+        if (this.props.onSelectedBooksChange) {
+            this.props.onSelectedBooksChange(this.state.selectedBooksCount, selectedBooksCount);
+        }
         this.setState({
-            selectedBooksCount: this.state.selectedBooksCount + (isSelected ? 1 : -1),
+            selectedBooksCount: selectedBooksCount,
             totalSelectedBookKinds: totalSelectedBookKinds
         });
     }
@@ -80,5 +84,6 @@ EndohaCategory.propTypes = {
     name: React.PropTypes.string.isRequired,
     minBooks: React.PropTypes.number.isRequired,
     books: React.PropTypes.array.isRequired,
-    onTotalSelectedBookKindsChange: React.PropTypes.func
+    onTotalSelectedBookKindsChange: React.PropTypes.func,
+    onSelectedBooksChange: React.PropTypes.func
 };

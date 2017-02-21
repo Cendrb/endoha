@@ -1,6 +1,17 @@
 .endoha_list {
+  .your_selected_books_count {
+    float: right;
+  }
+  
   .total_selected_book_kinds {
-    margin-top: 5px;
+    margin-top: 10px;
+  }
+
+  .enough {
+    color: #30872a;
+  }
+  .not_enough {
+    color: #a01017;
   }
 }
 
@@ -15,12 +26,6 @@
     .selected_books_status {
       float: right;
       margin-top: 2px;
-    }
-    .enough {
-      color: #30872a;
-    }
-    .not_enough {
-      color: #a01017;
     }
   }
   .book_list {
