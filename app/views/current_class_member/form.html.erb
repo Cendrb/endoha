@@ -1,7 +1,6 @@
-<h1>Choose your hero</h1>
+<h1>Vyberte se</h1>
 <%= form_tag current_class_member_path, class: 'form' do %>
     <div class="form-group">
-      <%= label_tag :class_member_id %><br/>
       <%= select_tag :class_member_id, options_from_collection_for_select(ClassMember.order(:last_name).all, :id, :of_name), class: 'form-control' %>
     </div>
     <%= submit_tag %>

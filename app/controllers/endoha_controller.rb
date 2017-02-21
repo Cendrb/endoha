@@ -1,4 +1,7 @@
 class EndohaController < ApplicationController
+
+  before_action :require_class_member
+
   def index
     @categories = []
     Category.all.each do |category|

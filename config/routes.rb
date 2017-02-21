@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   root to: 'endoha#index'
 
   resources :class_members
+  get 'class_members_fetch' => 'class_members#fetch_utu'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

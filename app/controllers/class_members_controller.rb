@@ -1,3 +1,6 @@
+require "uri"
+require "net/http"
+
 class ClassMembersController < ApplicationController
   before_action :set_class_member, only: [:show, :edit, :update, :destroy]
 
@@ -59,6 +62,16 @@ class ClassMembersController < ApplicationController
       format.html { redirect_to class_members_url, notice: 'Class member was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def fetch_utu
+    response = Net::HTTP.post_form(URI.parse('http://utu.herokuapp.com/api/pre_data'), {})
+    hash = Hash.from_xml(response.body)
+    ClassMember.destroy_all
+    hash['utu']['sclasses']['sclass']['class_members']['class_member'].each do |class_member|
+      ClassMember.create({first_name: class_member['first_name'], last_name: class_member['last_name']})
+    end
+    render plain: "Successfully fetched #{ClassMember.count} class members"
   end
 
   private

@@ -1,7 +1,5 @@
 class CurrentClassMemberController < ApplicationController
 
-  skip_before_filter :require_class_member
-
   def form
   end
 
