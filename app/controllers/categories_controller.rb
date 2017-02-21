@@ -61,6 +61,25 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def load_from_csv_form
+
+  end
+
+  def load_from_csv
+    require 'csv'
+
+    csv_text = params[:csv_file].read()
+    csv = CSV.parse(csv_text, :headers => true)
+    csv.each do |row|
+      hash = row.to_hash
+      category = Category.find_by(name: hash['category_name'])
+      if !category
+        category = Category.create(name: hash['category_name'], min_books: hash['category_min_books'])
+      end
+      Book.create(name: hash['name'], author: hash['author'], category: category)
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_category
