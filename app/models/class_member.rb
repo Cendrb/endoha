@@ -3,7 +3,7 @@ require "net/http"
 
 class ClassMember < ApplicationRecord
   has_many :book_class_member_bindings
-  has_many :books, through: :book_class_member_bindings
+  has_many :books, -> {distinct}, through: :book_class_member_bindings
 
   def full_name
     return first_name + ' ' + last_name

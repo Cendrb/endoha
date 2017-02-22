@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   has_many :book_class_member_bindings
-  has_many :class_members, through: :book_class_member_bindings
+  has_many :class_members, -> {distinct}, through: :book_class_member_bindings
   belongs_to :category
 
   def is_bound_to?(class_member)
