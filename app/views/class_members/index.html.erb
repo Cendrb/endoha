@@ -15,8 +15,9 @@
   <tbody>
   <% @class_members.each do |class_member| %>
       <tr>
-        <td><%= link_to class_member.first_name, class_member %></td>
-        <td><%= class_member.last_name %></td>
+        <td><%= link_to class_member.of_name, class_member %></td>
+        <td><%= class_member.books.pluck(:name).join(', ') %></td>
+        <td><%= class_member.books.count %></td>
         <td>
           <div class="float_right_actions">
             <%= link_to mi.edit, edit_class_member_path(class_member) %>

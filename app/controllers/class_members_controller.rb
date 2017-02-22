@@ -4,7 +4,7 @@ class ClassMembersController < ApplicationController
   # GET /class_members
   # GET /class_members.json
   def index
-    @class_members = ClassMember.all
+    @class_members = ClassMember.order(:last_name).all
   end
 
   # GET /class_members/1
