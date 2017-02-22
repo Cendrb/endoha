@@ -16,4 +16,8 @@ class Book < ApplicationRecord
   def unbind_from(class_member)
     return BookClassMemberBinding.where(class_member: class_member, book: self).destroy_all
   end
+
+  def self.books_required
+    return 20
+  end
 end
