@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  has_many :book_class_member_bindings
+  has_many :book_class_member_bindings, dependent: :destroy
   has_many :class_members, -> {distinct}, through: :book_class_member_bindings
   belongs_to :category
 

@@ -1,15 +1,17 @@
-  development:
-    adapter: postgresql
-    encoding: unicode
-    database: endoha_development
-    pool: 5
-    username: postgres
-    password: danjegay
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: danjegay
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-  test:
-    adapter: postgresql
-    encoding: unicode
+development:
+  <<: *default
+  database: endoha_development
+
+test:
+    <<: *default
     database: endoha_test
-    pool: 5
-    username: postgres
-    password: danjegay
